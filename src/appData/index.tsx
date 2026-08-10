@@ -50,6 +50,14 @@ export const TechIcon = {
     "https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white",
   HTML: "https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
   CSS: "https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white",
+  POWERAUTOMATE:
+    "https://img.shields.io/badge/Power_Automate-%230066FF.svg?style=for-the-badge&logo=powerautomate&logoColor=white",
+  POWERAPPS:
+    "https://img.shields.io/badge/Power_Apps-%23742774.svg?style=for-the-badge&logo=powerapps&logoColor=white",
+  LAMBDA:
+    "https://img.shields.io/badge/AWS_Lambda-%23FF9900.svg?style=for-the-badge&logo=awslambda&logoColor=white",
+  DYNAMODB:
+    "https://img.shields.io/badge/DynamoDB-%234053D6.svg?style=for-the-badge&logo=amazondynamodb&logoColor=white",
   GODOT:
     "https://img.shields.io/badge/Godot-%23478CBF.svg?style=for-the-badge&logo=godot-engine&logoColor=white",
   PHOTOSHOP:
@@ -196,59 +204,99 @@ export const GalleryAccordionTitles = ["Details"];
 export const WorkData = [
   {
     id: 1,
-    title: "Agentic Automation Engineer - Infocap",
-    date: "Current",
+    title: "Agentic Automation Engineer - Infocap AI",
+    date: "Nov 2024 - Present",
     gitURL: "",
     techstack: [
-      TechIcon.PYTHON,
-      TechIcon.UIPATH,
-      TechIcon.CHATGPT,
       TechIcon.AWS,
-      TechIcon.AZURE,
-      TechIcon.SQL,
+      TechIcon.LAMBDA,
+      TechIcon.DYNAMODB,
+      TechIcon.POWERAUTOMATE,
+      TechIcon.UIPATH,
+      TechIcon.PYTHON,
+      TechIcon.CHATGPT,
     ],
     gallery: [],
-    overview: `I work as an Agentic Automation Engineer at Infocap, where the focus is on
-    human-centric automation: combining AI, RPA and data engineering to help organisations make
-    sensible automation decisions rather than automating for its own sake. Day to day this means
-    designing and building agentic workflows, integrating large language models with existing
-    enterprise systems, and making sure the humans in the loop stay in control of the process.`,
+    overview: `Full-time, remote out of the District of Columbia. I design and deliver technical
+    proofs of concept for government and enterprise clients, using AWS Connect, the Power Platform
+    and UiPath to support pre-sales and solution architecture work - the stage where you have to
+    show something real rather than describe it. On our largest client I serve as Development Lead
+    and Solution Architect on AWS, working across Connect, Lambda, DynamoDB and CloudFormation.
+    I also build Infocap's own internal automation and integration systems, including the team's
+    phone system, put together with Connect, Lambda and DynamoDB.`,
   },
   {
     id: 2,
-    title: "RPA Developer - Enterprise RPA Initiative",
-    date: "2 years",
+    title: "Sr. Service Analyst - Exelon",
+    date: "Oct 2023 - Nov 2024",
     gitURL: "",
-    techstack: [
-      TechIcon.UIPATH,
-      TechIcon.PYTHON,
-      TechIcon.POWERSHELL,
-      TechIcon.SQL,
-    ],
+    techstack: [TechIcon.UIPATH, TechIcon.POWERAUTOMATE, TechIcon.POWERAPPS],
     gallery: [],
-    overview: `Spent two years as an RPA developer on an enterprise-wide robotic process automation
-    initiative, delivering production automations against real business processes. The work covered
-    the full lifecycle: sitting with process owners to understand what actually happens versus what
-    the documentation claims, building and testing the automations, and supporting them once they
-    were live.`,
+    overview: `Full-time, remote out of Chicago. I owned the architecture and development of
+    automations built on UiPath, Microsoft Power Automate and Power Apps, working across teams with
+    analysts and stakeholders to keep release schedules on track. The role spanned the whole
+    lifecycle - requirements gathering, build, maintenance and support - plus user education, which
+    matters more than it sounds: an automation nobody understands is an automation nobody trusts.
+    I also managed a small pod of automation developers on special projects for the Finance
+    division.`,
   },
   {
     id: 3,
-    title: "Software QA Intern",
-    date: "Summer 2015",
+    title: "Consultant - Slalom",
+    date: "Aug 2022 - Sep 2023",
     gitURL: "",
-    techstack: [TechIcon.JAVASCRIPT, TechIcon.PYTHON],
+    techstack: [TechIcon.UIPATH, TechIcon.POWERAUTOMATE, TechIcon.CHATGPT],
     gallery: [],
-    overview: `My first role in the industry - a summer internship doing software QA at a startup
-    technology company, which turned into a paid position afterwards. It was the job that taught me
-    how software actually breaks in the hands of real users, which is a perspective I have carried
-    into every automation project since.`,
+    overview: `Full-time consulting specialising in Intelligent Process Automation, building on the
+    UiPath and Power Automate platforms. I developed and deployed automations through the entire
+    project lifecycle using Agile methodologies, and delivered training to Fortune 500 clients and
+    internal teams on automation development, Center of Excellence practices, and emerging
+    automation technology - generative AI included, right as it stopped being a curiosity and
+    started being a requirement.`,
   },
   {
     id: 4,
+    title: "Information Systems Analyst - Consumers Credit Union",
+    date: "Nov 2019 - Aug 2022",
+    gitURL: "",
+    techstack: [TechIcon.UIPATH, TechIcon.POWERAUTOMATE, TechIcon.SQL],
+    gallery: [],
+    overview: `Full-time in the Greater Chicago Area. I supported and managed the credit union's
+    core financial system - employee troubleshooting, testing and installing updates, and working
+    with outside vendors. Alongside that I developed the automation programs that put departments
+    onto RPA, using UiPath Studio Pro and StudioX, Microsoft Power Automate and Automic Automation.
+    This is where automation went from something I did to something I do.`,
+  },
+  {
+    id: 5,
+    title: "Various others",
+    date: "2013 - 2020",
+    gitURL: "",
+    techstack: [TechIcon.PHOTOSHOP, TechIcon.HTML, TechIcon.CSS],
+    gallery: [],
+    overview: `The route in, roughly in reverse. Enumerator for the U.S. Census Bureau (Jul - Oct
+    2020), a part-time stint verifying addresses and collecting 2020 Census responses in the field.
+    Coordinator of Digital Evangelization and Outreach at St. Paul the Apostle Parish in Gurnee, IL
+    (Jul 2018 - Nov 2019), maintaining the parish's whole technical footprint - WiFi, website,
+    social media, projection and sound at Masses - and building a multi-camera live streaming setup
+    so home-bound parishioners could still attend. PC Technician at Abbott (Nov 2017 - Jul 2018),
+    running daily operations for the Managed Print Services program and keeping the device
+    inventory honest. Help Desk Analyst at NCOIT Inc (Sep 2016 - Nov 2017), first response on the
+    ticketing system, system imaging and general support.
+
+    Before that, Saint Leo University: Information Security Intern (Jan - May 2016), auditing
+    university servers for vulnerabilities alongside the InfoSec team; Resident Assistant (Aug 2013
+    - May 2016), running two resident events a month for nearly three years; and Student Tutor
+    (Sep - Dec 2014) in computer information systems and theology. Plus a summer at NetWeaver
+    Software in Cocoa, FL (May - Aug 2015), a startup doing online reservations, where I built and
+    documented an Apache server, ran QA and systems testing, and made logos, gift certificates and
+    instructional videos in Photoshop and Final Cut Pro.`,
+  },
+  {
+    id: 6,
     title: "Windows XP Personal Website",
     date: "2025 - Present",
-    gitURL: "https://github.com/geepee123/winxpsite",
+    gitURL: "https://github.com/gpinfocap/winxpsite",
     techstack: [
       TechIcon.TYPESCRIPT,
       TechIcon.NEXTJS,
@@ -265,7 +313,7 @@ export const WorkData = [
     about presenting a career spent automating modern systems inside an operating system from 2001.`,
   },
   {
-    id: 5,
+    id: 7,
     title: "Wrath of Verath",
     date: "2026",
     gitURL: "https://github.com/geepee123/Wrath-of-Verath",
@@ -276,18 +324,18 @@ export const WorkData = [
     ship anything. Game development scratches a different itch than automation work does.`,
   },
   {
-    id: 6,
+    id: 8,
     title: "AWS Certified DevOps Engineer - Professional",
     date: "May 2026 - May 2029",
     gitURL: "",
-    techstack: [TechIcon.AWS, TechIcon.DOCKER],
+    techstack: [TechIcon.AWS, TechIcon.LAMBDA, TechIcon.DOCKER],
     gallery: [],
     overview: `The AWS Certified DevOps Engineer - Professional certification, covering continuous
     delivery, infrastructure as code, monitoring and incident response on AWS. Valid through
     May 2029.`,
   },
   {
-    id: 7,
+    id: 9,
     title: "UiPath Certifications",
     date: "2022 - 2024",
     gitURL: "",
@@ -300,9 +348,9 @@ export const WorkData = [
     not the code.`,
   },
   {
-    id: 8,
+    id: 10,
     title: "Cloud & Data Certifications",
-    date: "2023",
+    date: "2011 - 2023",
     gitURL: "",
     techstack: [TechIcon.AZURE, TechIcon.MATILLION, TechIcon.PHOTOSHOP],
     gallery: [],
@@ -312,8 +360,8 @@ export const WorkData = [
     proof that the design side came first.`,
   },
   {
-    id: 9,
-    title: "Saint Leo University & Awards",
+    id: 11,
+    title: "Education & Awards",
     date: "2012 - 2016",
     gitURL: "",
     techstack: [],
@@ -330,64 +378,78 @@ export const WorkAccordionContent = [
     id: 1,
     type: WorkType.PROFESSIONAL,
     icon: file,
-    title: "Infocap - Agentic Automation",
+    title: "Infocap AI - Agentic Automation",
     content: WorkData[0],
   },
   {
     id: 2,
     type: WorkType.PROFESSIONAL,
     icon: file,
-    title: "Enterprise RPA Initiative",
+    title: "Exelon - Sr. Service Analyst",
     content: WorkData[1],
   },
   {
     id: 3,
     type: WorkType.PROFESSIONAL,
     icon: file,
-    title: "Software QA Intern",
+    title: "Slalom - Consultant",
     content: WorkData[2],
   },
   {
     id: 4,
-    type: WorkType.PERSONAL,
+    type: WorkType.PROFESSIONAL,
     icon: file,
-    title: "Windows XP Personal Website",
+    title: "Consumers CU - IS Analyst",
     content: WorkData[3],
   },
   {
     id: 5,
-    type: WorkType.PERSONAL,
+    type: WorkType.PROFESSIONAL,
     icon: file,
-    title: "Wrath of Verath",
+    title: "Various others",
     content: WorkData[4],
   },
   {
     id: 6,
-    type: WorkType.CREDENTIALS,
-    icon: emptyfile,
-    title: "AWS DevOps Engineer - Pro",
+    type: WorkType.PERSONAL,
+    icon: file,
+    title: "Windows XP Personal Website",
     content: WorkData[5],
   },
   {
     id: 7,
-    type: WorkType.CREDENTIALS,
-    icon: emptyfile,
-    title: "UiPath Certifications",
+    type: WorkType.PERSONAL,
+    icon: file,
+    title: "Wrath of Verath",
     content: WorkData[6],
   },
   {
     id: 8,
     type: WorkType.CREDENTIALS,
     icon: emptyfile,
-    title: "Cloud & Data Certifications",
+    title: "AWS DevOps Engineer - Pro",
     content: WorkData[7],
   },
   {
     id: 9,
     type: WorkType.CREDENTIALS,
     icon: emptyfile,
-    title: "Education & Awards",
+    title: "UiPath Certifications",
     content: WorkData[8],
+  },
+  {
+    id: 10,
+    type: WorkType.CREDENTIALS,
+    icon: emptyfile,
+    title: "Cloud & Data Certifications",
+    content: WorkData[9],
+  },
+  {
+    id: 11,
+    type: WorkType.CREDENTIALS,
+    icon: emptyfile,
+    title: "Education & Awards",
+    content: WorkData[10],
   },
 ];
 

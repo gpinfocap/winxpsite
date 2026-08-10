@@ -19,9 +19,13 @@ import Image from "next/image";
 const INTRO = `Hi, I'm Glen - nice to meet you! I'm an Agentic Automation Engineer at Infocap,
 based in Lake Villa, Illinois. I'm passionate about using modern technology to take the tedious,
 repetitive parts of work off people's plates so they can spend their time on the parts that actually
-need a human. These days that means building agentic workflows: wiring large language models into
-the enterprise systems businesses already run on, and doing it in a way that keeps people in
-control of the process rather than at the mercy of it.`;
+need a human. These days that means building agentic workflows and AWS-based systems: wiring large
+language models and cloud services into the enterprise systems businesses already run on, and doing
+it in a way that keeps people in control of the process rather than at the mercy of it.
+
+I got here the long way round - help desk, then PC support, then the core banking system at a credit
+union, then consulting, and at every stop the part I kept gravitating towards was the same one:
+finding the process everybody dreads and quietly making it disappear.`;
 
 const WHYSITE = `Most of my working life is spent on automation, AI and cloud infrastructure - all
 things that did not exist in anything like their current form when I first sat down in front of a
@@ -33,11 +37,12 @@ scrolling landing page. Have a click around - the icons all do something, and Pa
 works.`;
 
 const INTERESTS = `My route into automation ran through security and problem-solving. At Saint Leo
-University I was part of the InfoSec Club and the Computer Club, and took first place in the
-Saint Leo CTF Challenge in 2016 - capture-the-flag competitions are still my favourite way to think
-about how systems actually behave versus how they are documented to behave. That instinct turned
-out to be exactly the one that matters in automation work, where the gap between the documented
-process and the real one is where every interesting problem lives.`;
+University I was part of the InfoSec Club and the Computer Club, interned with the university's
+information security team auditing servers for vulnerabilities, and took first place in the Saint
+Leo CTF Challenge in 2016. Capture-the-flag competitions are still my favourite way to think about
+how systems actually behave versus how they are documented to behave - which turned out to be
+exactly the instinct that matters in automation work, where the gap between the documented process
+and the real one is where every interesting problem lives.`;
 
 const INTERESTS2 = `I like building things that have nothing to do with my day job, too. Wrath of
 Verath is a game I have been putting together in Godot - a completely throwaway project in the best
