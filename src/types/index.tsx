@@ -35,12 +35,13 @@ export enum App {
   HELP,
   WARNING,
   WELCOME,
+  PAINT,
 }
 
 export enum WorkType {
+  PROFESSIONAL = "Professional Experience",
   PERSONAL = "Personal Projects",
-  SCHOOL = "School Projects",
-  HACKATHON = "Hackathons",
+  CREDENTIALS = "Certifications & Awards",
 }
 
 export type WorkFile = {

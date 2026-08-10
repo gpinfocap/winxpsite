@@ -2,7 +2,6 @@ import WelcomeIcon from "components/WelcomeIcon/WelcomeIcon";
 import styles from "./Welcome.module.css";
 import linkedin from "../../assets/linkedin.png";
 import outlook from "../../assets/outlook_large.png";
-import gallery from "../../assets/folder_image.png";
 import pdf from "../../assets/pdf.png";
 import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
@@ -16,45 +15,42 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/types";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import userprofile from "../../assets/userprofile.jpg";
-import userprofile2 from "../../assets/userprofile2.jpg";
-import ebc1 from "../../assets/ebc1.jpeg";
-import ebc2 from "../../assets/ebc2.jpg";
 
-const INTRO = `Hi, I'm Wei Pin, an aspiring technopreneur based in Singapore. I am 
-  currently a Computer Engineering Sophomore at the National University of Singapore and I am
-  passionate about building innovative software solutions that solves problems.`;
+const INTRO = `Hi, I'm Glen - nice to meet you! I'm an Agentic Automation Engineer at Infocap,
+based in Lake Villa, Illinois. I'm passionate about using modern technology to take the tedious,
+repetitive parts of work off people's plates so they can spend their time on the parts that actually
+need a human. These days that means building agentic workflows: wiring large language models into
+the enterprise systems businesses already run on, and doing it in a way that keeps people in
+control of the process rather than at the mercy of it.`;
 
-const WHYSITE = `I always love challenging myself to creating something different and interesting.
-The main reason why I chose to create a website that resembles a Windows XP OS is because my 
-software development journey first started back in the early 2010 when I was creating simple utility
-apps such as calculators, web browser, message encrypters, phishing app and simple chatbot using 
-Visual Basic on Visual Studio 2010 out of curiousity and fun. Now that I have more experience in
-software development, I decided to "recreate" the environment I used to work in back then and make
-it feel as though you are accessing my computer directly.`;
+const WHYSITE = `Most of my working life is spent on automation, AI and cloud infrastructure - all
+things that did not exist in anything like their current form when I first sat down in front of a
+computer. So there is something pleasing about presenting all of it inside a Windows XP desktop.
+It is the operating system a lot of us learned on: the double-click, the start menu, the taskbar,
+the satisfying clunk of a window snapping to maximised. A portfolio is really just a folder of
+things you have made, and this felt like a more honest way to show you around one than yet another
+scrolling landing page. Have a click around - the icons all do something, and Paint genuinely
+works.`;
 
-const INTERESTS = `Other than my interest in developing websites and apps for fun, I love solo
-travelling and exploring new places. It is during these times I get to reflect on my own life and
-step out of my comfort zone to talk to people within the local community and my hostel where I meet
-people from all over the world. Other than that, I am also a firm believer that the best way to 
-learn and grow as a person is to immerse yourself in a different culture and environment. This
-forces you become adaptable to new situations and learn to be more independent and self-reliant.`;
+const INTERESTS = `My route into automation ran through security and problem-solving. At Saint Leo
+University I was part of the InfoSec Club and the Computer Club, and took first place in the
+Saint Leo CTF Challenge in 2016 - capture-the-flag competitions are still my favourite way to think
+about how systems actually behave versus how they are documented to behave. That instinct turned
+out to be exactly the one that matters in automation work, where the gap between the documented
+process and the real one is where every interesting problem lives.`;
 
-const INTERESTS2 = `Other than traveling, I love trekking and cycling, and as a challenge to myself, I decided 
-to embark on a journey to the Everest Base Camp. After a 130KM, 2504M grueling vertical ascend from 
-Tenzing-Hillary Airport, widely regarded as some of the world’s most dangerous airports, I made it 
-with a friend of mine and our guide. The entire experience was spectacular as I have also met and struck up 
-conversations with trekkers from all walks of life and background, and we all had a common goal 
-of reaching the top of the base camp.`;
+const INTERESTS2 = `I like building things that have nothing to do with my day job, too. Wrath of
+Verath is a game I have been putting together in Godot - a completely throwaway project in the best
+sense, built to learn an engine rather than to ship anything. This website is in the same category.
+Side projects are where you get to make all the decisions badly and learn something from it, which
+is harder to do in production.`;
 
-const INTERESTS3 = `Also, I love (really in love with) drone photography and filming! This is my one true passion, as
-the angles I get are much more unique compared to any DSLR/phone camera. The perspectives that
-aerial shots offer are so mesmerizing that it makes you feel like a bird (and this fulfills my 
-desire to be able to fly lol) (You can view some of collection on this website). Lastly, I love 
-to read non-fiction books, especially those that are related to entrepreneurship, biographies, 
-and self-help, as those books usually contain a lot of valuable insights and satiate my curiosity 
-about the lives of others.
-`;
+const INTERESTS3 = `Before any of the engineering, the design side came first: my earliest
+certification is an Adobe Certified Associate in Photoshop, from back in 2011. I still care a lot
+about how things look and feel to use, which is probably obvious from the amount of time I have
+spent getting the title bars on this site right. Outside of screens entirely, I'm an Eagle Scout -
+a slow lesson in planning a project properly and then actually finishing it, which has been more
+useful professionally than it has any right to be.`;
 
 interface props {
   id: number;
@@ -86,7 +82,7 @@ const Welcome = ({ id }: props) => {
       {!aboutmeView ? (
         <div>
           <h3 className={styles.welcome_text}>
-            Welcome To Wei Pin&apos;s Personal Website
+            Welcome To Glen Pringle&apos;s Personal Website
           </h3>
           <p className={styles.subtitle}>
             Learn more about me by clicking any of the icons below to get
@@ -106,7 +102,7 @@ const Welcome = ({ id }: props) => {
                 tooltip="My Brain Dump"
                 onClick={() => {
                   window.open(
-                    "https://github.com/firwer",
+                    "https://github.com/geepee123",
                     "_blank",
                     "noreferrer"
                   );
@@ -118,7 +114,7 @@ const Welcome = ({ id }: props) => {
                 tooltip="Connect with me!"
                 onClick={() => {
                   window.open(
-                    "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+                    "https://www.linkedin.com/in/glenpringle1/",
                     "_blank",
                     "noreferrer"
                   );
@@ -129,7 +125,15 @@ const Welcome = ({ id }: props) => {
                 text={"My Resume"}
                 tooltip="My Curriculum Vitae"
                 onClick={() => {
-                  window.open("./Resume.pdf");
+                  const newTab = {
+                    ...AppDirectory.get(7),
+                    id: uuidv4(),
+                    zIndex: currTabID,
+                    title: "My Resume",
+                    message:
+                      "My resume isn't posted here yet. In the meantime, the LinkedIn icon has my full background, or drop me a message through Outlook Express.",
+                  };
+                  store.dispatch(addTab(newTab));
                 }}
               />
             </div>
@@ -146,12 +150,6 @@ const Welcome = ({ id }: props) => {
                 tooltip="Reach out to me!"
                 onClick={() => handleRunApp(1)}
               />
-              <WelcomeIcon
-                img={gallery}
-                text={"My Photography Collection"}
-                tooltip="Click to view!"
-                onClick={() => handleRunApp(4)}
-              />
             </div>
           </div>
         </div>
@@ -160,36 +158,6 @@ const Welcome = ({ id }: props) => {
           <h3 className={styles.welcome_text}>About Me</h3>
           <p className={styles.subtitle}></p>
           <div className={styles.content}>
-            <div className={styles.pic_col}>
-              <Image
-                alt="profile_pic"
-                src={userprofile.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-              <Image
-                alt="profile_pic"
-                src={userprofile2.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-              <Image
-                alt="profile_pic"
-                src={ebc1.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-              <Image
-                alt="profile_pic"
-                src={ebc2.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-            </div>
             <div className={styles.text_col}>
               <p className={styles.subtitle}>{INTRO}</p>
               <h3 className={styles.subtitle_header}>

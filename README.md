@@ -1,11 +1,40 @@
-## My Personal Portfolio Website Based off Windows XP Styling
+# Glen Pringle — Personal Site (Windows XP Edition)
 
-This Website is built with Next.JS, Redux, HTML, CSS and whatever that make sense
+A personal portfolio built to look and behave like Windows XP: draggable and resizable windows,
+a working start menu and taskbar, a contact form styled as Outlook Express, and a fully functional
+copy of Paint.
 
-Built it cause it lokos cool and I like old stuff
+Built with Next.js, TypeScript, Redux and a lot of CSS.
 
-Currently Deployed on Vercel
-Credits:
-https://github.com/firwer/winxpsite (for the website template!!!!!)
-https://github.com/botoxparty/XP.css (For some CSS pre-styled components like buttons and scrollbar)
-https://github.com/ShizukuIchi/winXP (For general inspiration and some borrowed CSS stylings for startmenu box and bar)
+## Running locally
+
+```
+npm install
+npm run dev
+```
+
+The site runs at http://localhost:3000.
+
+## Deployment
+
+Deployed on Netlify. The contact form uses [Netlify Forms](https://docs.netlify.com/forms/setup/) —
+submissions appear in the Netlify dashboard under **Forms**, and email notifications can be enabled
+there. No API keys are needed, and none are stored in the client bundle.
+
+## Adding your own content
+
+- **Resume** — drop a `Resume.pdf` into `public/` and point the resume handlers in
+  `src/pages/index.tsx`, `components/StartMenu/StartMenu.tsx` and `src/programs/Welcome.tsx`
+  back at `window.open("./Resume.pdf")`.
+- **Photo gallery** — add images under `assets/` and populate `PhotoCollection` in
+  `src/appData/index.tsx`. The gallery shows an empty state until it has entries.
+- **Work and projects** — edit `WorkData` and `WorkAccordionContent` in `src/appData/index.tsx`.
+- **Bio copy** — the About Me text lives at the top of `src/programs/Welcome.tsx`.
+
+## Credits
+
+- [firwer/winxpsite](https://github.com/firwer/winxpsite) — the original template this is forked from
+- [botoxparty/XP.css](https://github.com/botoxparty/XP.css) — XP-styled form components
+- [ShizukuIchi/winXP](https://github.com/ShizukuIchi/winXP) — general inspiration, some CSS, and the
+  approach used for the Paint window
+- [jspaint.app](https://jspaint.app) — the Paint implementation embedded in the Paint window

@@ -27,12 +27,24 @@ const MyGallery = ({ id }: Props) => {
   });
 
   useEffect(() => {
-    setCurrDisplay(PhotoCollection[0]);
+    if (PhotoCollection.length > 0) {
+      setCurrDisplay(PhotoCollection[0]);
+    }
   }, []);
 
   const setDisplay = (id: number) => {
     setCurrDisplay(PhotoCollection[id]);
   };
+
+  if (PhotoCollection.length === 0) {
+    return (
+      <div className={styles.main}>
+        <div style={{ padding: "20px" }}>
+          <p>There are no pictures in this folder yet.</p>
+        </div>
+      </div>
+    );
+  }
 
   const handlePreviousImage = () => {
     console.log(currDisplay.id);

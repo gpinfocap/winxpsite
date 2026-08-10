@@ -24,6 +24,8 @@ import MyWork from "@/programs/MyWork";
 import MsgBox from "components/MsgBox/MsgBox";
 import Welcome from "@/programs/Welcome";
 import MyGallery from "@/programs/MyGallery";
+import Paint from "@/programs/Paint";
+import paint from "../../assets/paint.png";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -37,29 +39,51 @@ export default function Home() {
     console.log("Icon Clicked!");
   };
   const handleOpenGitHub = () => {
-    window.open("https://github.com/firwer", "_blank", "noreferrer");
+    window.open("https://github.com/geepee123", "_blank", "noreferrer");
   };
 
   const handleOpenLinkedin = () => {
     window.open(
-      "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+      "https://www.linkedin.com/in/glenpringle1/",
       "_blank",
       "noreferrer"
     );
   };
 
   const handleOpenResume = () => {
-    window.open("./Resume.pdf");
+    const newTab = {
+      ...AppDirectory.get(7),
+      id: uuidv4(),
+      zIndex: currTabID,
+      title: "My Resume",
+      message:
+        "My resume isn't posted here yet. In the meantime, the LinkedIn icon has my full background, or drop me a message through Outlook Express.",
+    };
+    store.dispatch(addTab(newTab));
   };
 
   return (
     <>
       <Head>
-        <title>Wei Pin&apos;s Personal Website - Home Page</title>
-        <meta name="description" content="My Personal Space" />
+        <title>Glen Pringle - Agentic Automation Engineer</title>
+        <meta
+          name="description"
+          content="Glen Pringle - Agentic Automation Engineer at Infocap. Portfolio, projects and contact, served as a Windows XP desktop."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
+      <form
+        name="contact"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="message" />
+        <input type="text" name="bot-field" />
+      </form>
       <main className={styles.main}>
         <div
           style={{
@@ -111,6 +135,12 @@ export default function Home() {
             title="My Hobbies"
             img={solitare}
           />
+          <DesktopIcon
+            appID={8}
+            doubleClick={() => handleRunApp(9)}
+            title="Paint"
+            img={paint}
+          />
           {Tabs.map((tab, index) => {
             return tab.isMinimized ? (
               <></>
@@ -133,6 +163,8 @@ export default function Home() {
                   <Welcome id={tab.id} />
                 ) : tab.program === App.MYGALLERY ? (
                   <MyGallery id={tab.id} />
+                ) : tab.program === App.PAINT ? (
+                  <Paint id={tab.id} />
                 ) : tab.program === App.ERROR ? (
                   <p>{tab.message}</p>
                 ) : tab.program === App.INFO ? (

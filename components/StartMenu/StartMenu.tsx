@@ -1,5 +1,5 @@
 import styles from "./StartMenu.module.css";
-import userprofile from "../../assets/userprofile.jpg";
+import userprofile from "../../assets/users.png";
 import folder from "../../assets/folder_plain.png";
 import StartMenuItem from "components/StartMenuItem/StartMenuItem";
 import recentdoc from "../../assets/recentdoc.png";
@@ -35,16 +35,24 @@ interface StartMenuProps {
 
 const StartMenu = ({ menuControl }: StartMenuProps) => {
   const handleOpenGitHub = () => {
-    window.open("https://github.com/firwer", "_blank", "noreferrer");
+    window.open("https://github.com/geepee123", "_blank", "noreferrer");
   };
 
   const handleOpenResume = () => {
-    window.open("./Resume.pdf", "_blank");
+    menuControl(false);
+    const newTab = {
+      ...AppDirectory.get(7),
+      id: uuidv4(),
+      title: "My Resume",
+      message:
+        "My resume isn't posted here yet. In the meantime, the LinkedIn icon has my full background, or drop me a message through Outlook Express.",
+    };
+    store.dispatch(addTab(newTab));
   };
 
   const handleOpenLinkedin = () => {
     window.open(
-      "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+      "https://www.linkedin.com/in/glenpringle1/",
       "_blank",
       "noreferrer"
     );
@@ -81,7 +89,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
             textShadow: "1px 1px #000000",
           }}
         >
-          Wei Pin&apos;s PC
+          Glen&apos;s PC
         </p>
       </div>
       <hr className={styles.orangehr} />
@@ -126,7 +134,12 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
               icon={cmd}
               type={2}
             />
-            <StartMenuItem title="Paint" icon={paint} type={2} />
+            <StartMenuItem
+              onClick={() => handleRunApp(9)}
+              title="Paint"
+              icon={paint}
+              type={2}
+            />
           </div>
           <div>
             <hr className={styles.greyhr} />

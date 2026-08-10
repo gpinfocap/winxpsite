@@ -22,56 +22,68 @@ const Outlook = () => {
   const [from, setFrom] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const API_KEY = process.env.NEXT_PUBLIC_MAILGUN_API;
-  const FROM_EMAIL = "feedback@pohwp.dev";
-  const TO_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
-  const axios = require("axios");
   const captchaRef = React.useRef(null);
   const emailRef = React.useRef<HTMLInputElement>(null);
   const subjectRef = React.useRef<HTMLInputElement>(null);
   const messageRef = React.useRef<HTMLTextAreaElement>(null);
+
+  // Submissions are handled by Netlify Forms, which posts back to the site root.
+  // The matching static form lives in pages/index.tsx so Netlify can detect it at build time.
+  const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+
   const sendEmail = async () => {
-    if (from !== "" && subject !== "") {
-      await axios({
-        method: "post",
-        url: `https://api.mailgun.net/v3/pohwp.dev/messages`,
-        auth: {
-          username: "api",
-          password: API_KEY,
-        },
-        params: {
-          from: FROM_EMAIL,
-          to: TO_EMAIL,
-          subject: "New Message From A Visitor: " + subject,
-          text: "From: " + from + "\nMessage: " + message,
-        },
-      })
-        .then(() => {
-          const newTab = {
-            ...AppDirectory.get(7),
-            id: uuidv4(),
-            zIndex: currTabID,
-            title: "Outlook - Message Sent!",
-            message: "Your message has been sent! I will get back to you soon!",
-          };
-          console.log(newTab);
-          store.dispatch(addTab(newTab));
-          if (emailRef.current !== null) {
-            emailRef.current.value = "";
-            setFrom("");
-          }
-          if (subjectRef.current !== null) {
-            subjectRef.current.value = "";
-            setSubject("");
-          }
-          if (messageRef.current !== null) {
-            messageRef.current.value = "";
-            setMessage("");
-          }
-        })
-        .catch(() => {
-          console.error("Error sending email:");
-        });
+    if (from === "" || subject === "") {
+      return;
+    }
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          email: from,
+          subject: subject,
+          message: message,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Form submission failed: " + response.status);
+      }
+      const newTab = {
+        ...AppDirectory.get(7),
+        id: uuidv4(),
+        zIndex: currTabID,
+        title: "Outlook - Message Sent!",
+        message: "Your message has been sent! I will get back to you soon!",
+      };
+      store.dispatch(addTab(newTab));
+      if (emailRef.current !== null) {
+        emailRef.current.value = "";
+        setFrom("");
+      }
+      if (subjectRef.current !== null) {
+        subjectRef.current.value = "";
+        setSubject("");
+      }
+      if (messageRef.current !== null) {
+        messageRef.current.value = "";
+        setMessage("");
+      }
+    } catch (error) {
+      const newTab = {
+        ...AppDirectory.get(5),
+        id: uuidv4(),
+        zIndex: currTabID,
+        title: "Outlook - Send Failed",
+        message:
+          "Sorry, your message could not be sent. Please email me directly at glenpringle1@gmail.com.",
+      };
+      store.dispatch(addTab(newTab));
     }
   };
 
@@ -199,7 +211,7 @@ const Outlook = () => {
               disabled
               id="text21"
               type="text"
-              value="Poh Wei Pin (pohwp99@gmail.com)"
+              value="Glen Pringle (glenpringle1@gmail.com)"
             />
             <input
               className={styles.textfield}
