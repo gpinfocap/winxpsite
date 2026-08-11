@@ -27,10 +27,12 @@ import MyGallery from "@/programs/MyGallery";
 import Paint from "@/programs/Paint";
 import paint from "../../assets/paint.png";
 import Quake from "@/programs/Quake";
+import Shutdown from "components/Shutdown/Shutdown";
 import quake from "../../assets/quake.png";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
+  const isShutdown = useSelector((state: RootState) => state.system.shutdown);
 
   const handleRunApp = (e: number) => {
     const newTab = { ...AppDirectory.get(e), id: uuidv4(), zIndex: currTabID };
@@ -116,6 +118,7 @@ export default function Home() {
         <textarea name="message" />
         <input type="text" name="bot-field" />
       </form>
+      {isShutdown && <Shutdown />}
       <main className={styles.main}>
         <div
           style={{

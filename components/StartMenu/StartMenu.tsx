@@ -25,6 +25,7 @@ import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
 import { AppDirectory } from "@/appData";
 import { addTab } from "@/redux/tabSlice";
+import { shutdownSystem } from "@/redux/systemSlice";
 import store from "@/redux/store";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
@@ -36,6 +37,15 @@ interface StartMenuProps {
 const StartMenu = ({ menuControl }: StartMenuProps) => {
   const handleOpenGitHub = () => {
     window.open("https://github.com/gpinfocap", "_blank", "noreferrer");
+  };
+
+  const handleShutdown = () => {
+    menuControl(false);
+    // Browsers only honour window.close() for windows that script opened, so
+    // this is a no-op on a normally-navigated tab. Fall back to the XP
+    // shutdown screen, which is what actually gets shown in practice.
+    window.close();
+    store.dispatch(shutdownSystem());
   };
 
   const handleOpenResume = () => {
@@ -185,7 +195,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
           />
           Log Off
         </div>
-        <div className={styles.systemBtn}>
+        <div className={styles.systemBtn} onClick={handleShutdown}>
           <Image
             width={30}
             height={30}

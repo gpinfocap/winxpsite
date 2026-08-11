@@ -25,7 +25,7 @@ const Quake = ({ id }: props) => {
       attempts += 1;
       const win = frame.contentWindow as any;
       if (win && typeof win.Cbuf_AddText === "function") {
-        win.Cbuf_AddText('volume 0.12\nbgmvolume 0.1\n');
+        win.Cbuf_AddText('volume 0.12\nbgmvolume 0.1\ngamma 0.75\n');
         clearInterval(timer);
       } else if (attempts > 60) {
         clearInterval(timer);

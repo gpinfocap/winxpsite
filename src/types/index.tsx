@@ -20,7 +20,7 @@ export type RootState = {
     currentZIndex: number;
   };
   system: {
-    backactive: boolean;
+    shutdown: boolean;
   };
 };
 
