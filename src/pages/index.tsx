@@ -60,10 +60,48 @@ export default function Home() {
         <title>Glen Pringle - Agentic Automation Engineer</title>
         <meta
           name="description"
-          content="Glen Pringle - Agentic Automation Engineer at Infocap. Portfolio, projects and contact, served as a Windows XP desktop."
+          content="Glen Pringle's personal home page. Welcome to my site!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.ico" />
+
+        {/* Link previews. Most platforms read only the og: tags, and the
+            image URL has to be absolute for them to fetch it. */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Glen Pringle" />
+        <meta property="og:url" content="https://glenpringle.com/" />
+        <meta
+          property="og:title"
+          content="Glen Pringle - Agentic Automation Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Glen Pringle's personal home page. Welcome to my site!"
+        />
+        <meta
+          property="og:image"
+          content="https://glenpringle.com/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="A Windows XP desktop with a Quick Start Guide window welcoming visitors to Glen Pringle's site"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Glen Pringle - Agentic Automation Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Glen Pringle's personal home page. Welcome to my site!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://glenpringle.com/og-image.png"
+        />
       </Head>
       <form
         name="contact"
