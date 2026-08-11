@@ -2172,8 +2172,8 @@ function M_Quit_Key( key ) {
 
 		case 121: // 'y'
 		case 89: // 'Y'
-			// Navigate to the project page
-			window.open( 'https://x.com/mrdoob/status/2015076521531355583', '_blank' );
+			// Upstream opened the author's announcement post here. Embedded in a
+			// window on this site, quitting should just drop back to the menu.
 			M_Menu_Main_f();
 			break;
 
