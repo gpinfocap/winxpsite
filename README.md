@@ -1,10 +1,10 @@
 # Glen Pringle — Personal Site (Windows XP Edition)
 
-A personal portfolio built to look and behave like Windows XP: draggable and resizable windows,
+My personal portfolio built to look and behave like Windows XP: draggable and resizable windows,
 a working start menu and taskbar, a contact form styled as Outlook Express, and a fully functional
 copy of Paint.
 
-Built with Next.js, TypeScript, Redux and a lot of CSS.
+Built with Next.js, TypeScript, Redux, Claude and a lot of CSS.
 
 ## Running locally
 

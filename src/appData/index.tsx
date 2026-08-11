@@ -219,8 +219,7 @@ export const WorkData = [
     gallery: [],
     overview: `Full-time, remote out of the District of Columbia. I design and deliver technical
     proofs of concept for government and enterprise clients, using AWS Connect, the Power Platform
-    and UiPath to support pre-sales and solution architecture work - the stage where you have to
-    show something real rather than describe it. On our largest client I serve as Development Lead
+    and UiPath to support pre-sales and solution architecture work. On our largest client I serve as Development Lead
     and Solution Architect on AWS, working across Connect, Lambda, DynamoDB and CloudFormation.
     I also build Infocap's own internal automation and integration systems, including the team's
     phone system, put together with Connect, Lambda and DynamoDB.`,
@@ -235,8 +234,7 @@ export const WorkData = [
     overview: `Full-time, remote out of Chicago. I owned the architecture and development of
     automations built on UiPath, Microsoft Power Automate and Power Apps, working across teams with
     analysts and stakeholders to keep release schedules on track. The role spanned the whole
-    lifecycle - requirements gathering, build, maintenance and support - plus user education, which
-    matters more than it sounds: an automation nobody understands is an automation nobody trusts.
+    lifecycle - requirements gathering, build, maintenance and support.
     I also managed a small pod of automation developers on special projects for the Finance
     division.`,
   },
@@ -251,8 +249,7 @@ export const WorkData = [
     UiPath and Power Automate platforms. I developed and deployed automations through the entire
     project lifecycle using Agile methodologies, and delivered training to Fortune 500 clients and
     internal teams on automation development, Center of Excellence practices, and emerging
-    automation technology - generative AI included, right as it stopped being a curiosity and
-    started being a requirement.`,
+    automation technology.`,
   },
   {
     id: 4,
@@ -262,10 +259,10 @@ export const WorkData = [
     techstack: [TechIcon.UIPATH, TechIcon.POWERAUTOMATE, TechIcon.SQL],
     gallery: [],
     overview: `Full-time in the Greater Chicago Area. I supported and managed the credit union's
-    core financial system - employee troubleshooting, testing and installing updates, and working
+    core financial system alongside a small team, which included employee troubleshooting, testing and installing updates, and working
     with outside vendors. Alongside that I developed the automation programs that put departments
     onto RPA, using UiPath Studio Pro and StudioX, Microsoft Power Automate and Automic Automation.
-    This is where automation went from something I did to something I do.`,
+    This is where I started cutting my teeth with automation and set the tone for my career so far.`,
   },
   {
     id: 5,
@@ -319,13 +316,12 @@ export const WorkData = [
     gitURL: "https://github.com/geepee123/Wrath-of-Verath",
     techstack: [TechIcon.GODOT],
     gallery: [],
-    overview: `A game project built in Godot with GDScript. Very much a throwaway side project built
-    for the fun of it - the kind of thing you make on a weekend to learn an engine rather than to
-    ship anything. Game development scratches a different itch than automation work does.`,
+    overview: `A game project built in Godot with GDScript. Made to be a Slay the Spire clone but wanted to do something with giant mechas.
+    Who doesn't love giant mechas? Angels?`,
   },
   {
     id: 8,
-    title: "AWS Certified DevOps Engineer - Professional",
+    title: "AWS Certifications",
     date: "May 2026 - May 2029",
     gitURL: "",
     techstack: [TechIcon.AWS, TechIcon.LAMBDA, TechIcon.DOCKER],
@@ -343,33 +339,30 @@ export const WorkData = [
     gallery: [],
     overview: `Three UiPath certifications earned across the RPA side of my career: Certified
     Advanced RPA Developer (October 2022), Automation Developer Associate (October 2024), and
-    Automation Business Analyst Associate (November 2024). The business analyst track matters as
-    much as the developer one - most failed automations fail at the process understanding stage,
-    not the code.`,
+    Automation Business Analyst Associate (November 2024).`,
   },
   {
     id: 10,
-    title: "Cloud & Data Certifications",
+    title: "Other Cloud & Data Certifications",
     date: "2011 - 2023",
     gitURL: "",
     techstack: [TechIcon.AZURE, TechIcon.MATILLION, TechIcon.PHOTOSHOP],
     gallery: [],
     overview: `Microsoft Certified: Azure Fundamentals (June 2023) and Matillion Associate
     Certification (January 2023), covering cloud fundamentals and cloud-native data transformation.
-    Also, going back rather further, an Adobe Certified Associate in Photoshop CS5 from 2011 -
-    proof that the design side came first.`,
+    Also, going back rather further, an Adobe Certified Associate in Photoshop CS5 from 2011.`,
   },
   {
     id: 11,
     title: "Education & Awards",
-    date: "2012 - 2016",
+    date: "2012 - 202",
     gitURL: "",
     techstack: [],
     gallery: [],
     overview: `Studied at Saint Leo University from 2012 to 2016, taking part in the Honors Program,
     the InfoSec Club, the Computer Club, the Career Planning Advisory Board and the Residence Life
     LLC Committee. Took first place in the Saint Leo CTF Challenge in March 2016, was a YVAIN
-    Scholarship Finalist in 2014, and am an Eagle Scout.`,
+    Scholarship Finalist in 2014, and am an Eagle Scout. I additionally finished my MBA in 2024 from WGU.`,
   },
 ];
 
@@ -427,7 +420,7 @@ export const WorkAccordionContent = [
     id: 8,
     type: WorkType.CREDENTIALS,
     icon: emptyfile,
-    title: "AWS DevOps Engineer - Pro",
+    title: "AWS Certifications",
     content: WorkData[7],
   },
   {

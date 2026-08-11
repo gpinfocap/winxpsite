@@ -94,7 +94,7 @@ const MyWork = ({ id }: Props) => {
               Begin Navigation by clicking on one of my projects on the left
               panel
             </h5>
-            <h5>These are some of the tech stacks I have experiences with!</h5>
+            <h5>These are some of the tech stacks I have experience with.</h5>
             <div className={styles.content_tech}>
               {Object.values(TechIcon).map((badge) => (
                 <div key={badge} className={styles.tech_badge}>
