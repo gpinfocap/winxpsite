@@ -40,14 +40,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
 
   const handleOpenResume = () => {
     menuControl(false);
-    const newTab = {
-      ...AppDirectory.get(7),
-      id: uuidv4(),
-      title: "My Resume",
-      message:
-        "My resume isn't posted here yet. In the meantime, the LinkedIn icon has my full background, or drop me a message through Outlook Express.",
-    };
-    store.dispatch(addTab(newTab));
+    window.open("./Resume.pdf", "_blank", "noreferrer");
   };
 
   const handleOpenLinkedin = () => {

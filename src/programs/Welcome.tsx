@@ -125,22 +125,6 @@ const Welcome = ({ id }: props) => {
                   );
                 }}
               />
-              <WelcomeIcon
-                img={pdf}
-                text={"My Resume"}
-                tooltip="My Curriculum Vitae"
-                onClick={() => {
-                  const newTab = {
-                    ...AppDirectory.get(7),
-                    id: uuidv4(),
-                    zIndex: currTabID,
-                    title: "My Resume",
-                    message:
-                      "My resume isn't posted here yet. In the meantime, the LinkedIn icon has my full background, or drop me a message through Outlook Express.",
-                  };
-                  store.dispatch(addTab(newTab));
-                }}
-              />
             </div>
             <div className={styles.rightpanel}>
               <WelcomeIcon
@@ -154,6 +138,14 @@ const Welcome = ({ id }: props) => {
                 text={"Send Me An Email"}
                 tooltip="Reach out to me!"
                 onClick={() => handleRunApp(1)}
+              />
+              <WelcomeIcon
+                img={pdf}
+                text={"My Resume"}
+                tooltip="My Curriculum Vitae"
+                onClick={() => {
+                  window.open("./Resume.pdf", "_blank", "noreferrer");
+                }}
               />
             </div>
           </div>
