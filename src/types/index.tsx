@@ -36,6 +36,7 @@ export enum App {
   WARNING,
   WELCOME,
   PAINT,
+  QUAKE,
 }
 
 export enum WorkType {

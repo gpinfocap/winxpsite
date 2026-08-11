@@ -27,10 +27,17 @@ const DesktopIcon = (props: {
     };
   }, []);
 
+  // Icons fill a column top to bottom, then wrap into the next one, so they
+  // never run off the bottom of the screen behind the taskbar.
+  const ICONS_PER_COLUMN = 7;
+  const slot = props.appID - 1;
+  const column = Math.floor(slot / ICONS_PER_COLUMN);
+  const row = slot % ICONS_PER_COLUMN;
+
   return (
     <Draggable nodeRef={ref} bounds="parent">
       <div
-        style={{ top: props.appID * 90 - 40 }}
+        style={{ top: row * 90 + 50, left: column * 90 }}
         onDoubleClick={props.doubleClick}
         onClick={HighlightIcon}
         className={styles.icon}

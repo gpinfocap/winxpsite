@@ -224,7 +224,8 @@ const WinForm = (props: {
           }
         >
           <div className={styles.windowsbody}>
-            {!props.prompt && props.programType !== App.PAINT && (
+            {!props.prompt && props.programType !== App.PAINT &&
+              props.programType !== App.QUAKE && (
               <WinToolBar
                 title={props.title}
                 icon={props.icon}

@@ -17,6 +17,7 @@ import outlook from "../../assets/outlook.png";
 import file from "../../assets/workaccordion/file.png";
 import emptyfile from "../../assets/workaccordion/emptyfile.png";
 import paint from "../../assets/paint.png";
+import quake from "../../assets/quake.png";
 export const TechIcon = {
   PYTHON:
     "https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white",
@@ -131,6 +132,20 @@ export const AppDirectory: Map<number, Tab> = new Map([
       isMinimized: false,
       zIndex: 0,
       program: App.PAINT,
+      prompt: false,
+      backBtnActive: false,
+    },
+  ],
+  [
+    10,
+    {
+      id: 0,
+      title: "Quake",
+      message: "",
+      Icon: quake,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.QUAKE,
       prompt: false,
       backBtnActive: false,
     },

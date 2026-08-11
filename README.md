@@ -38,3 +38,6 @@ there. No API keys are needed, and none are stored in the client bundle.
 - [ShizukuIchi/winXP](https://github.com/ShizukuIchi/winXP) — general inspiration, some CSS, and the
   approach used for the Paint window
 - [jspaint.app](https://jspaint.app) — the Paint implementation embedded in the Paint window
+- [mrdoob/three-quake](https://github.com/mrdoob/three-quake) — the Three.js port of Quake served
+  from `public/quake/`. That directory is GPL v2 (its `LICENSE` is kept alongside it) and ships the
+  freely redistributable shareware `pak0.pak` (Episode 1). Original game by id Software.

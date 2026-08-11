@@ -26,6 +26,8 @@ import Welcome from "@/programs/Welcome";
 import MyGallery from "@/programs/MyGallery";
 import Paint from "@/programs/Paint";
 import paint from "../../assets/paint.png";
+import Quake from "@/programs/Quake";
+import quake from "../../assets/quake.png";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -171,6 +173,12 @@ export default function Home() {
             title="Paint"
             img={paint}
           />
+          <DesktopIcon
+            appID={9}
+            doubleClick={() => handleRunApp(10)}
+            title="Quake"
+            img={quake}
+          />
           {Tabs.map((tab, index) => {
             return tab.isMinimized ? (
               <></>
@@ -195,6 +203,8 @@ export default function Home() {
                   <MyGallery id={tab.id} />
                 ) : tab.program === App.PAINT ? (
                   <Paint id={tab.id} />
+                ) : tab.program === App.QUAKE ? (
+                  <Quake id={tab.id} />
                 ) : tab.program === App.ERROR ? (
                   <p>{tab.message}</p>
                 ) : tab.program === App.INFO ? (
