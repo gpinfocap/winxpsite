@@ -1,5 +1,7 @@
 .window {
   height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .titlebar_unfocused {
@@ -68,14 +70,16 @@
   display: flex;
   background-color: rgb(117, 135, 221);
   padding: 0 4px 4px 4px;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 .windowborder {
   display: flex;
   background-color: rgb(8, 49, 217);
   padding: 0 4px 4px 4px;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 .windowsbody {
@@ -84,6 +88,8 @@
   background-color: white;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .title {
@@ -174,4 +180,34 @@
 .close:active {
   opacity: 0.85;
   filter: brightness(80%);
+}
+
+/* Resize grips. The title bar is react-draggable's handle, so these sit
+   outside it and never trigger a window drag. */
+.resize_e {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: ew-resize;
+}
+
+.resize_s {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  cursor: ns-resize;
+}
+
+.resize_se {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  z-index: 2;
 }

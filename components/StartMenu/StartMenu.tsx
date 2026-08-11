@@ -1,5 +1,5 @@
 import styles from "./StartMenu.module.css";
-import userprofile from "../../assets/users.png";
+import userprofile from "../../assets/profile.jpg";
 import folder from "../../assets/folder_plain.png";
 import StartMenuItem from "components/StartMenuItem/StartMenuItem";
 import recentdoc from "../../assets/recentdoc.png";
@@ -61,7 +61,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
       <hr className={styles.whitehr} />
       <div className={styles.menutopbar}>
         <Image
-          alt="userprofile"
+          alt="Glen Pringle"
           src={userprofile.src}
           width={55}
           height={55}
@@ -72,6 +72,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
             borderColor: "rgba(222, 222, 222, 0.8)",
             boxShadow: "0 0 3px 3px rgba(0, 0, 0, 0.2)",
             margin: "0 5px 0 5px",
+            objectFit: "cover",
           }}
         />
         <p

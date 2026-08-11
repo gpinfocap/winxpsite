@@ -65,3 +65,15 @@
 .text_col {
   width: 60%;
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .leftpanel,
+  .rightpanel,
+  .text_col {
+    width: 100%;
+  }
+}

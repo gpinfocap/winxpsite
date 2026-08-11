@@ -13,10 +13,12 @@ import {
 import store from "@/redux/store";
 import { useSelector } from "react-redux";
 import { App, RootState } from "@/types";
-import { Resizable } from "react-resizable";
-import ResizableComponent from "@/util/Resizer/Resizer";
 
 const unfocusedAdjustment = "brightness(1.05)";
+const MIN_WIDTH = 320;
+const MIN_HEIGHT = 200;
+type ResizeDir = "e" | "s" | "se";
+
 const WinForm = (props: {
   id: number;
   title: string;
@@ -31,9 +33,53 @@ const WinForm = (props: {
   const [isMinimized, setMinimised] = useState(false);
   const [currX, setX] = useState(0);
   const [currY, setY] = useState(0);
+  const [size, setSize] = useState<{ width: number; height: number } | null>(
+    null
+  );
+  const [isMobile, setIsMobile] = useState(false);
+  const windowRef = useRef<HTMLDivElement>(null);
   const currTabID = useSelector(
     (state: RootState) => state.tab.currentFocusedTab
   );
+
+  // Detected after mount rather than during render so the server and client
+  // markup match on first paint.
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const startResize = (event: React.MouseEvent, dir: ResizeDir) => {
+    const el = windowRef.current;
+    if (!el) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const startWidth = el.offsetWidth;
+    const startHeight = el.offsetHeight;
+    const originX = event.clientX;
+    const originY = event.clientY;
+
+    const handleMove = (moveEvent: MouseEvent) => {
+      const nextWidth =
+        dir === "s"
+          ? startWidth
+          : Math.max(MIN_WIDTH, startWidth + moveEvent.clientX - originX);
+      const nextHeight =
+        dir === "e"
+          ? startHeight
+          : Math.max(MIN_HEIGHT, startHeight + moveEvent.clientY - originY);
+      setSize({ width: nextWidth, height: nextHeight });
+    };
+    const handleUp = () => {
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("mouseup", handleUp);
+    };
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseup", handleUp);
+  };
 
   const handleMaximize = () => {
     setMaximised(!isMaximized);
@@ -55,7 +101,8 @@ const WinForm = (props: {
   };
   let draggableProps;
 
-  if (isMaximized) {
+  // On phones the window is pinned to the viewport, so dragging is disabled.
+  if (isMaximized || (isMobile && !props.prompt)) {
     draggableProps = {
       position: { x: 0, y: 0 },
       handle: ".handle",
@@ -69,23 +116,43 @@ const WinForm = (props: {
       onStop: handleStop,
     };
   }
+
+  const isFullBleed = isMaximized || (isMobile && !props.prompt);
+  const canResize = !props.prompt && !isMaximized && !isMobile;
+
   const promptDisplay = "inline";
-  const promptWidth = "450px";
+  const promptWidth = isMobile ? "90%" : "450px";
   const promptHeight = "auto";
-  const normalDisplay = isMinimized ? "none" : "inline";
-  const normalWidth = isMaximized ? "100%" : "750px";
-  const normalHeight = isMaximized ? "calc(100% - 40px)" : "75%";
+  // "flex" (not "inline") so the column layout in .window actually applies and
+  // the body fills the frame down to the resize grip.
+  const normalDisplay = isMinimized ? "none" : "flex";
+
+  let normalWidth: string;
+  let normalHeight: string;
+  if (isMaximized) {
+    normalWidth = "100%";
+    normalHeight = "calc(100% - 40px)";
+  } else if (isMobile) {
+    normalWidth = "96%";
+    normalHeight = "calc(100% - 90px)";
+  } else {
+    normalWidth = size ? `${size.width}px` : "750px";
+    normalHeight = size ? `${size.height}px` : "75%";
+  }
+
   return (
     <Draggable {...draggableProps}>
       <div
+        ref={windowRef}
         style={{
-          top: isMaximized ? "0" : "10%",
-          left: isMaximized ? "0" : "20%",
-          bottom: isMaximized ? "20px" : "",
+          top: isMaximized ? "0" : isMobile ? "2%" : "10%",
+          left: isMaximized ? "0" : isMobile ? "2%" : "20%",
+          bottom: isMaximized ? "20px" : undefined,
           position: "absolute",
           display: props.prompt ? promptDisplay : normalDisplay,
           width: props.prompt ? promptWidth : normalWidth,
           height: props.prompt ? promptHeight : normalHeight,
+          maxWidth: isFullBleed ? "100%" : "none",
           zIndex: props.zIndex,
         }}
         className={styles.window}
@@ -168,6 +235,22 @@ const WinForm = (props: {
             {props.children}
           </div>
         </div>
+        {canResize && (
+          <>
+            <div
+              className={styles.resize_e}
+              onMouseDown={(e) => startResize(e, "e")}
+            />
+            <div
+              className={styles.resize_s}
+              onMouseDown={(e) => startResize(e, "s")}
+            />
+            <div
+              className={styles.resize_se}
+              onMouseDown={(e) => startResize(e, "se")}
+            />
+          </>
+        )}
       </div>
     </Draggable>
   );

@@ -61,3 +61,19 @@
 .tab_icon {
   margin: 0 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .tab_container,
+  .tab_container_focused {
+    max-width: 130px;
+    min-width: 0;
+  }
+
+  .tab_icon {
+    margin: 0 5px;
+  }
+
+  .tab_text {
+    font-size: 12px;
+  }
+}

@@ -145,3 +145,22 @@
   height: 100%;
   margin: 0 8px;
 }
+
+@media screen and (max-width: 768px) {
+  /* The icon toolbar and address bar are wider than a phone screen and force
+     the whole window to scroll sideways. Neither does anything here, so drop
+     them and keep the menu bar. */
+  .toolbar_icon,
+  .bottomwindowsbar {
+    display: none;
+  }
+
+  .toolbaritem {
+    font-size: 13px;
+    padding: 0 5px;
+  }
+
+  .winlogo {
+    display: none;
+  }
+}

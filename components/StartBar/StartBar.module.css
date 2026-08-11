@@ -103,3 +103,32 @@
     width: 270px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  /* The system tray was widening to 270px on small screens, which squeezed
+     the task buttons. Let it shrink to just the clock instead. */
+  .icontray {
+    width: auto;
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+
+  .iconrow {
+    display: none;
+  }
+
+  .startbtn,
+  .startbtn_active {
+    width: 80px;
+    flex-shrink: 0;
+    /* cover would crop the "start" text at this width */
+    background-size: 100% 100%;
+  }
+
+  .tabbar {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    gap: 3px;
+  }
+}
