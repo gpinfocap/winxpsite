@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Glen Pringle - Agentic Automation Engineer</title>
+        <title>Glen Pringle - My Personal Site</title>
         <meta
           name="description"
           content="Glen Pringle's personal home page. Welcome to my site!"
@@ -74,7 +74,7 @@ export default function Home() {
         <meta property="og:url" content="https://glenpringle.com/" />
         <meta
           property="og:title"
-          content="Glen Pringle - Agentic Automation Engineer"
+          content="Glen Pringle - My Personal Site"
         />
         <meta
           property="og:description"
@@ -94,7 +94,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Glen Pringle - Agentic Automation Engineer"
+          content="Glen Pringle - My Personal Site"
         />
         <meta
           name="twitter:description"
