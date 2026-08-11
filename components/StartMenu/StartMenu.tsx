@@ -35,12 +35,12 @@ interface StartMenuProps {
 
 const StartMenu = ({ menuControl }: StartMenuProps) => {
   const handleOpenGitHub = () => {
-    window.open("https://github.com/geepee123", "_blank", "noreferrer");
+    window.open("https://github.com/gpinfocap", "_blank", "noreferrer");
   };
 
   const handleOpenResume = () => {
     menuControl(false);
-    window.open("./Resume.pdf", "_blank", "noreferrer");
+    window.open("/Glen%20Pringle%20-%20Resume.pdf", "_blank", "noreferrer");
   };
 
   const handleOpenLinkedin = () => {

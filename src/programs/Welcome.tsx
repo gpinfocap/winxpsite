@@ -81,7 +81,7 @@ const Welcome = ({ id }: props) => {
                 tooltip="My Brain Dump"
                 onClick={() => {
                   window.open(
-                    "https://github.com/geepee123",
+                    "https://github.com/gpinfocap",
                     "_blank",
                     "noreferrer"
                   );
@@ -118,7 +118,7 @@ const Welcome = ({ id }: props) => {
                 text={"My Resume"}
                 tooltip="My Curriculum Vitae"
                 onClick={() => {
-                  window.open("./Resume.pdf", "_blank", "noreferrer");
+                  window.open("/Glen%20Pringle%20-%20Resume.pdf", "_blank", "noreferrer");
                 }}
               />
             </div>

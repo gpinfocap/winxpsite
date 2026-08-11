@@ -39,7 +39,7 @@ export default function Home() {
     console.log("Icon Clicked!");
   };
   const handleOpenGitHub = () => {
-    window.open("https://github.com/geepee123", "_blank", "noreferrer");
+    window.open("https://github.com/gpinfocap", "_blank", "noreferrer");
   };
 
   const handleOpenLinkedin = () => {
@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   const handleOpenResume = () => {
-    window.open("./Resume.pdf", "_blank", "noreferrer");
+    window.open("/Glen%20Pringle%20-%20Resume.pdf", "_blank", "noreferrer");
   };
 
   return (
